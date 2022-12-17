@@ -13,6 +13,10 @@ export default defineComponent({
       type: Object,
       required: true,
     },
+    index: {
+      type: Number,
+      required: true,
+    },
   },
   methods: {
     ...mapActions(useTodoStore, ['removeTodo', 'setEditedTodo']),
@@ -24,7 +28,10 @@ export default defineComponent({
   <li
     class="todo-list-item fadeIn"
     :key="todo.id">
-    <span>{{ todo.text }}</span>
+    <div>
+      <span>{{ index }}.</span>
+      <span class="ml-2">{{ todo.text }}</span>
+    </div>
     <aside class="flex gap-1">
       <Button
         icon="mdi:edit"

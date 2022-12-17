@@ -59,6 +59,9 @@
       @apply bg-danger-dark;
     }
   }
+  &.neobrutalism {
+    box-shadow: 1.5px 3.5px 1px var(--gray-900);
+  }
   &.disabled,
   &:disabled {
     @apply bg-gray-300 text-gray-400 cursor-not-allowed;

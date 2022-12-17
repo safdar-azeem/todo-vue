@@ -24,9 +24,10 @@ export default defineComponent({
       class="todo-list"
       v-if="todos.length">
       <TodoItem
-        v-for="todo in todos"
+        v-for="(todo, index) in todos"
         :key="todo.id"
-        :todo="todo" />
+        :todo="todo"
+        :index="index + 1" />
     </ul>
     <EmptyState v-else />
   </section>

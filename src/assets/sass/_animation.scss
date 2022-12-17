@@ -1,9 +1,10 @@
-* {
+.fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
+  animation-delay: 0.5s;
   animation-fill-mode: both;
 }
 
