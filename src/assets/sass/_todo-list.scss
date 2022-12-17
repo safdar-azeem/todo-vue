@@ -1,0 +1,5 @@
+.todo-list {
+  .todo-list-item {
+    @apply border-gray-700 border-b p-1  flex items-center justify-between;
+  }
+}

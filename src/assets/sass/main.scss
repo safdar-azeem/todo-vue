@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './theme';
+@import './base';
+@import './animation';
+@import './forms/button';
+@import './forms/input';
+@import './todo-list';
