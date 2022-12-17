@@ -4,10 +4,11 @@ import { mapActions, mapState } from 'pinia'
 import { defineComponent } from 'vue'
 import Button from '../reusable/Button.vue'
 import EmptyState from './EmptyState.vue'
+import TodoItem from './TodoItem.vue'
 
 export default defineComponent({
   name: 'TodoList',
-  components: { Button, EmptyState },
+  components: { Button, EmptyState, TodoItem },
   computed: {
     ...mapState(useTodoStore, ['todos']),
   },
@@ -22,26 +23,10 @@ export default defineComponent({
     <ul
       class="todo-list"
       v-if="todos.length">
-      <li
-        class="todo-list-item fadeIn"
+      <TodoItem
         v-for="todo in todos"
-        :key="todo.id">
-        <span>{{ todo.text }}</span>
-        <aside class="flex gap-1">
-          <Button
-            icon="mdi:edit"
-            variant="transparent"
-            size="md"
-            radius="rounded-full"
-            @click="setEditedTodo(todo.id)" />
-          <Button
-            icon="mdi:trash"
-            variant="transparent"
-            size="md"
-            radius="rounded-full"
-            @click="removeTodo(todo.id)" />
-        </aside>
-      </li>
+        :key="todo.id"
+        :todo="todo" />
     </ul>
     <EmptyState v-else />
   </section>
